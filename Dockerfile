@@ -48,8 +48,9 @@ RUN set -eux; \
                   fontconfig \
                   lsb-release \
                   ca-certificates \
-  > /dev/null;
-  
+  > /dev/null; \
+  rm -rf /var/lib/apt/lists/*; \
+  \
 ## Add FineReport 10.0 deployment package, with jre and tomcat, and add finedocker script
   cd /opt; \
   wget --no-check-certificate --no-verbose -O /opt/tomcat-linux_ENG.tar.gz $FR10_LINUX_DEPLOY_PACK_URL; \
@@ -58,14 +59,15 @@ RUN set -eux; \
 ## Unpack FineReport 10.0 package
   tar xzf tomcat-linux_ENG.tar.gz; \
   rm tomcat-linux_ENG.tar.gz; \
-  mv tomcat-linux_ENG tomcat; \
+  mv tomcat-linux tomcat; \
   mv finedocker.sh tomcat/bin/; \
   \
 ## Handle permission issues
   chown root:root -R .; \
   chmod +x -R tomcat/bin/ \
               tomcat/jdk/bin/ \
-              tomcat/jdk/jre/bin/
+              tomcat/jdk/jre/bin/ \
+              tomcat/webapps/webroot/WEB-INF/assist/*/bin/; 
 
 
 # Create work directory
