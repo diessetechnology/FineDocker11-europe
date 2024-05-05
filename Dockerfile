@@ -66,8 +66,7 @@ RUN set -eux; \
   chown root:root -R .; \
   chmod +x -R tomcat/bin/ \
               tomcat/jdk/bin/ \
-              tomcat/jdk/jre/bin/ \
-              tomcat/webapps/webroot/WEB-INF/assist/*/bin/; 
+              tomcat/jdk/jre/bin/
 
 
 # Create work directory
