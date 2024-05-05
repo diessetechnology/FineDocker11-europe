@@ -53,12 +53,12 @@ RUN set -eux; \
   \
 ## Add FineReport 10.0 deployment package, with jre and tomcat, and add finedocker script
   cd /opt; \
-  wget --no-check-certificate --no-verbose -O /opt/tomcat-linux.tar.gz $FR10_LINUX_DEPLOY_PACK_URL; \
+  wget --no-check-certificate --no-verbose -O /opt/tomcat-linux_ENG.tar.gz $FR10_LINUX_DEPLOY_PACK_URL; \
   wget --no-check-certificate --no-verbose -O /opt/finedocker.sh $FINEDOCKER_SCRIPT_URL; \
   \
 ## Unpack FineReport 10.0 package
-  tar xzf tomcat-linux.tar.gz; \
-  rm tomcat-linux.tar.gz; \
+  tar xzf tomcat-linux_ENG.tar.gz; \
+  rm tomcat-linux_ENG.tar.gz; \
   mv tomcat-linux tomcat; \
   mv finedocker.sh tomcat/bin/; \
   \
