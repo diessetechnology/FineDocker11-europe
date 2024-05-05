@@ -23,7 +23,7 @@ LABEL \
 # Set some environment variables
 ENV \
   TZ=$TZ \
-  LANG=zh_CN.UTF-8 \
+  LANG=en_US \
   JAVA_HOME=/opt/tomcat/jdk/jre/ \
   CATALINA_HOME=/opt/tomcat/ \
   PATH="/opt/tomcat/jdk/bin:/opt/tomcat/jdk/jre/bin:/opt/tomcat/bin:$PATH" \
