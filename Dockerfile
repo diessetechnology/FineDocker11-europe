@@ -24,8 +24,8 @@ LABEL \
 ENV \
   TZ=$TZ \
   LANG=en_US \
-  JAVA_HOME=/opt/tomcat/jdk/jre/ \
-  CATALINA_HOME=/opt/tomcat/ \
+  JAVA_HOME=/opt/tomcat/jdk/jre \
+  CATALINA_HOME=/opt/tomcat \
   PATH="/opt/tomcat/jdk/bin:/opt/tomcat/jdk/jre/bin:/opt/tomcat/bin:$PATH" \
   HEALTH_CHECK_URL="http://localhost:8080/webroot/decision/system/health" \
   HEALTH_CHECK_PATTERN="\"level\":\"HEALTH\""
