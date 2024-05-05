@@ -59,7 +59,7 @@ RUN set -eux; \
 ## Unpack FineReport 10.0 package
   tar xzf tomcat-linux_ENG.tar.gz; \
   rm tomcat-linux_ENG.tar.gz; \
-  mv tomcat-linux tomcat; \
+  mv tomcat-linux_ENG tomcat; \
   mv finedocker.sh tomcat/bin/; \
   \
 ## Handle permission issues
