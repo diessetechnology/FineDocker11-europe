@@ -49,7 +49,7 @@ RUN set -eux; \
                   lsb-release \
                   ca-certificates \
   > /dev/null;
-  \
+  
 ## Add FineReport 10.0 deployment package, with jre and tomcat, and add finedocker script
   cd /opt; \
   wget --no-check-certificate --no-verbose -O /opt/tomcat-linux_ENG.tar.gz $FR10_LINUX_DEPLOY_PACK_URL; \
