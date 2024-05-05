@@ -11,9 +11,9 @@
 FROM ubuntu
 
 # Pass some arguments
-ARG FR10_LINUX_DEPLOY_PACK_URL="https://fine-build.oss-cn-shanghai.aliyuncs.com/finereport/10.0/tomcat/tomcat-linux.tar.gz"
+ARG FR10_LINUX_DEPLOY_PACK_URL="https://fine-overseas-en.oss-eu-west-1.aliyuncs.com/11.0.26_2024.04.15/tomcat-linux_ENG.tar.gz"
 ARG FINEDOCKER_SCRIPT_URL="https://raw.githubusercontent.com/ysslang/FineDocker/master/finedocker.sh"
-ARG TZ="Asia/Shanghai"
+ARG TZ="Europe/Rome"
 
 # Label some informations about this docker image
 LABEL \
@@ -37,8 +37,6 @@ RUN set -eux; \
   ln -snf /usr/share/zoneinfo/$TZ /etc/localtime; \
   echo $TZ > /etc/timezone; \
   \
-## Change apt sources to USTC
-  sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list; \
 ## Install some necessary packages
   apt-get update -qq; \
   apt-get install -y -qq --no-install-recommends \
@@ -50,7 +48,6 @@ RUN set -eux; \
                   fontconfig \
                   lsb-release \
                   ca-certificates \
-                  language-pack-zh-hans \
   > /dev/null; \
   rm -rf /var/lib/apt/lists/*; \
   \
